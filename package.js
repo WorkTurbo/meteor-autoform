@@ -23,7 +23,6 @@ Package.onUse(function(api) {
 
   // Exports
   api.export('AutoForm', 'client');
-  api.add_files(['utility.js']);
   api.export('Utility', ['client', 'server']);
 
   // Common Files
