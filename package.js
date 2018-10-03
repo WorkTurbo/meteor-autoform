@@ -7,7 +7,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   // Dependencies
-  api.versionsFrom(['METEOR@0.9.3', 'METEOR@0.9.4', 'METEOR@1.0']);
+  api.versionsFrom(['METEOR@0.9.3', 'METEOR@0.9.4', 'METEOR@1.0', 'METEOR@1.7']);
   // common
   api.use('aldeed:simple-schema@1.1.0');
   api.use('check');
@@ -26,12 +26,11 @@ Package.onUse(function(api) {
   api.export('Utility', ['client', 'server']);
 
   // Common Files
-  api.addFiles(['autoform-common.js']);
+  api.add_files(['autoform-common.js', 'utility.js']);
 
   // Client Files
-  api.addFiles([
+  api.add_files([
     // utilities and general init
-    'utility.js',
     'form-preserve.js',
     'autoform-hooks.js',
     'autoform-formdata.js',
@@ -227,5 +226,5 @@ Package.onUse(function(api) {
 Package.onTest(function (api) {
   api.use(['aldeed:autoform', 'tinytest', 'underscore', 'mongo']);
   api.use('momentjs:moment', 'client');
-  api.addFiles(['tests/utility-tests.js', 'tests/autoform-tests.js']);
+  api.add_files(['tests/utility-tests.js', 'tests/autoform-tests.js']);
 });
